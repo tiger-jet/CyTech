@@ -6,7 +6,7 @@
         <h2>商品情報編集フォーム</h2>
         <p><a href='/product/{{$product->id}}'>→商品詳細画面へ戻る</a></p>
 
-        <form method="POST" action="{{ route('update') }}" onSubmit="return checkSubmit()" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('update') }}" onSubmit="return checkSubmit('更新してよろしいですか？')" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{$product->id}}">
 
@@ -82,13 +82,5 @@
         </form>
     </div>
 </div>
-<script>
-function checkSubmit(){
-if(window.confirm('更新してよろしいですか？')){
-    return true;
-} else {
-    return false;
-}
-}
-</script>
+
 @endsection

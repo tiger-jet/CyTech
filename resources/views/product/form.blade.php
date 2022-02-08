@@ -5,7 +5,7 @@
     <div class="col-md-8 col-md-offset-2">
         <h2>新規商品登録</h2>
         <p class = backToProduct><a href="{{route('product')}}">→商品一覧画面へ戻る</a></p>
-        <form method="POST" action="{{ route('store') }}" onSubmit="return checkSubmit()" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                <p>商品名：<input type="text" name="product_name"></p>
@@ -79,13 +79,4 @@
         </form>
     </div>
 </div>
-<script>
-function checkSubmit(){
-if(window.confirm('送信してよろしいですか？')){
-    return true;
-} else {
-    return false;
-}
-}
-</script>
 @endsection

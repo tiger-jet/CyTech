@@ -45,7 +45,7 @@
               <td>{{$product->stock}}</td>
               <td>{{$product->company_name}}</td>
               <td><a href="/product/{{$product->id}}">詳細へ</a></td>
-              <form method="POST" action="{{ route('delete' ,$product->id) }}" onSubmit="return checkDelete()">
+              <form method="POST" action="{{ route('delete' ,$product->id) }}" onSubmit="return checkSubmit('削除してよろしいですか？')">
              @csrf
               <td><button type="submit" onclick="">削除する</button></td>
               </form>
@@ -55,14 +55,5 @@
       </table>
   </div>
 </div>
-<script>
-function checkDelete(){
-if(window.confirm('削除してよろしいですか？')){
-    return true;
-} else {
-    return false;
-}
-}
-</script>
 @endsection
     
