@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\Models\Company;
 
 class Product extends Model
 {
@@ -26,12 +28,17 @@ class Product extends Model
         'updated_at'
     ];
 
-    
+     //CompaniesとProductsの結合処理
+     Public function join(){
+        $join = DB::table('products')
+                ->join('companies', 'products.company_id', '=', 'companies.id');
+        return $join;
+    }
 
-    public function company(){
-        return $this->belongsTo(Company::class);
-    }
-    public function sale(){
-        return $this->hasMany(Sale::class);
-    }
+    // public function company(){
+    //     return $this->belongsTo(Company::class);
+    // }
+    // public function sale(){
+    //     return $this->hasMany(Sale::class);
+    // }
 }

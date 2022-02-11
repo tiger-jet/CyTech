@@ -4,7 +4,7 @@
 
  <div class="row">
   <div class="col-md-20 col-md-offset-2">
-      <h2>商品一覧</h2>
+      <h2>商品詳細</h2>
     
       <table class="table table-striped">
           <tr>
